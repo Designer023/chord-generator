@@ -1,63 +1,32 @@
+import {chords, triad, seventh, chordPositions, technicalNames, majorPattern} from "./utils/constants";
 
-const chords = [
-"C",
-"C♯",
-"D",
-"D♯",
-"E",
-"F",
-"F♯",
-"G",
-"G♯",
-"A",
-"A♯",
-"B"
-];
-
-const triad = [3, 5];
-const seventh = [3, 5, 7];
-
-const chordPositions = ["I", "II", "III", "IV", "V", "VI", "VII"];
-const technicalNames = [
-"Tonic",
-"Supertonic",
-"Mediant",
-"Subdominant",
-"Dominant",
-"Submediant",
-"Leading note"
-];
-
-const pattern = [0, 2, 2, 1, 2, 2, 2];
-
-
-const baseOctave = 3;
 
 const createNotesForKey = (rootNote) => {
-chordIndex = chords.indexOf(rootNote);
-let notes = [];
-let idx = chordIndex;
-pattern.forEach((step) => {
-    idx += step;
-    idx = idx % 12;
-    constNextNote = chords[idx];
-    notes.push(`${constNextNote}`);
-});
-return notes;
+    const chordIndex = chords.indexOf(rootNote);
+    let notes = [];
+    let idx = chordIndex;
+
+    majorPattern.forEach((step) => {
+        idx += step;
+        idx = idx % 12;
+        const nextNote = chords[idx];
+        notes.push(`${nextNote}`);
+    });
+    return notes;
 };
 
 const createChordsForNoteInKeyNotes = (rootNote, keyNotes, pattern) => {
-chordIndex = keyNotes.indexOf(rootNote);
-let chordNotes = [rootNote];
+    const chordIndex = keyNotes.indexOf(rootNote);
+    let chordNotes = [rootNote];
 
-pattern.forEach((step) => {
-    let idx = chordIndex + step - 1;
-    idx = idx % keyNotes.length;
-    const nextNote = keyNotes[idx];
-    chordNotes.push(nextNote);
-});
+    pattern.forEach((step) => {
+        let idx = chordIndex + step - 1;
+        idx = idx % keyNotes.length;
+        const nextNote = keyNotes[idx];
+        chordNotes.push(nextNote);
+    });
 
-return chordNotes;
+    return chordNotes;
 };
 
 const getChordName = (chord, suffix = "") => {

@@ -4,5 +4,13 @@
   "description": "Generates chords for a key",
   "main": "index.js",
   "author": "Carl Topham",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "scripts": {
+    "start": "babel-node index.js"
+  }
 }
