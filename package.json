@@ -1,0 +1,8 @@
+{
+  "name": "chord-generator",
+  "version": "0.0.1",
+  "description": "Generates chords for a key",
+  "main": "index.js",
+  "author": "Carl Topham",
+  "license": "MIT"
+}
