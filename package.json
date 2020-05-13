@@ -9,8 +9,8 @@
   "dependencies": {},
   "scripts": {
     "start": "node --experimental-modules src/index.js",
-    "test": "jest",
-    "tidy": "prettier --write 'src/**/*.js'"
+    "test": "jest --colors ",
+    "tidy": "prettier --write '**/*.js'"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
@@ -32,6 +32,13 @@
     "*.{js,jsx}": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!<rootDir>/node_modules/"
     ]
   }
 }
