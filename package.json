@@ -19,6 +19,19 @@
     "babel-jest": "^26.0.1",
     "babel-preset-env": "^1.7.0",
     "jest": "^26.0.1",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "lint-staged": "^9.4.2",
+    "husky": "^2.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

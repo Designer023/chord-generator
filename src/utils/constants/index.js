@@ -40,9 +40,15 @@ export const createKeyStepsFromPattern = (pattern, keyPattern = majorPattern) =>
 };
 
 export const stepPatterns = {
-    triad: createKeyStepsFromPattern([1, 3, 5]),
-    seventh: createKeyStepsFromPattern([1, 3, 5, 7]),
-    triadFirstInversion: createKeyStepsFromPattern([3, 5, 8]),
-    triadSecondInversion: createKeyStepsFromPattern([5, 8, 10]),
-    xxx: createKeyStepsFromPattern([1, -3, -5, -2])
+    triads: {
+        root: createKeyStepsFromPattern([1, 3, 5]),
+        firstInversion: createKeyStepsFromPattern([3, 5, 8]),
+        secondInversion: createKeyStepsFromPattern([5, 8, 10])
+    },
+    sevenths: {
+        root: createKeyStepsFromPattern([1, 3, 5, 7]),
+        firstInversion: createKeyStepsFromPattern([3, 5, 7, 8]),
+        secondInversion: createKeyStepsFromPattern([5, 7, 8, 10]),
+        thirdInversion: createKeyStepsFromPattern([7, 8, 10, 12])
+    }
 };
