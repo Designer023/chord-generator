@@ -8,6 +8,13 @@ test("Major triad", () => {
     ]);
 });
 
+test("Negative test triad", () => {
+    expect(createKeyStepsFromPattern([1, 10], majorPattern)).toStrictEqual([
+        { steps: 0 },
+        { steps: 14 }
+    ]);
+});
+
 test("C", () => {
     expect(getNotesForSteps("C", [{ steps: 0 }, { steps: 4 }, { steps: 7 }])).toStrictEqual([
         "C",
