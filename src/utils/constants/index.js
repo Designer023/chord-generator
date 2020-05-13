@@ -43,12 +43,35 @@ export const stepPatterns = {
     triads: {
         root: createKeyStepsFromPattern([1, 3, 5]),
         firstInversion: createKeyStepsFromPattern([3, 5, 8]),
-        secondInversion: createKeyStepsFromPattern([5, 8, 10])
+        secondInversion: createKeyStepsFromPattern([5, 8, 11])
     },
     sevenths: {
         root: createKeyStepsFromPattern([1, 3, 5, 7]),
         firstInversion: createKeyStepsFromPattern([3, 5, 7, 8]),
-        secondInversion: createKeyStepsFromPattern([5, 7, 8, 10]),
-        thirdInversion: createKeyStepsFromPattern([7, 8, 10, 12])
+        secondInversion: createKeyStepsFromPattern([5, 7, 8, 11]),
+        thirdInversion: createKeyStepsFromPattern([7, 8, 11, 13])
     }
+};
+
+export const getNotesForSteps = (root, steps) => {
+    const offset = allNotes.indexOf(root);
+
+    let notes = [];
+
+    steps.map((step) => {
+        let cursor = offset + step.steps;
+
+        while (cursor >= allNotes.length) {
+            cursor -= allNotes.length;
+        }
+
+        while (cursor < 0) {
+            cursor += allNotes.length;
+        }
+
+        const retrivedNote = allNotes[cursor];
+        notes.push(retrivedNote);
+    });
+
+    return notes;
 };
