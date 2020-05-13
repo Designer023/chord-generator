@@ -1,4 +1,4 @@
-import { createChordsForNoteInKeyNotes } from "./chords.js";
+import { createChordsForNoteInKeyNotes, getChordName } from "./chords.js";
 
 import { triad } from "./constants/index.js";
 
@@ -7,5 +7,11 @@ describe("Major whites notes", function () {
         expect(
             createChordsForNoteInKeyNotes("C", ["C", "D", "E", "F", "G", "A", "B", "C"], triad)
         ).toStrictEqual(["C", "E", "G"]);
+    });
+});
+
+describe("Name that chord", function () {
+    test("C Minor", () => {
+        expect(getChordName(["C", "E", "G"])).toStrictEqual("Minor");
     });
 });
