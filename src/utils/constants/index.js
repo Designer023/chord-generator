@@ -3,7 +3,7 @@ export const allNotes = ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯"
 export const triad = [3, 5];
 export const seventh = [3, 5, 7];
 
-export const chordPositions = ["I", "II", "III", "IV", "V", "VI", "VII"];
+export const chordPositions = ["I", "II", "III", "IV", "V", "VI", "VII", "I"];
 
 export const technicalNames = [
     "Tonic",

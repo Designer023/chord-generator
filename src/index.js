@@ -1,18 +1,7 @@
-import {
-    triad,
-    seventh,
-    chordPositions,
-    technicalNames,
-    stepPatterns
-} from "./utils/constants/index.js";
+import { triad, seventh, chordPositions, technicalNames } from "./utils/constants/index.js";
 
 import { createNotesForKey } from "./utils/create-notes.js";
 import { createChordsForNoteInKeyNotes, getChordName } from "./utils/chords.js";
-
-const shiftArray = (arr, direction, n) => {
-    var times = n > arr.length ? n % arr.length : n;
-    return arr.concat(arr.splice(0, direction > 0 ? arr.length - times : times));
-};
 
 const generateChordsForKey = (key = "C") => {
     const notes = createNotesForKey(key);
@@ -21,7 +10,7 @@ const generateChordsForKey = (key = "C") => {
 
     notes.map((note, index) => {
         const chordNotesTriad = createChordsForNoteInKeyNotes(note, notes, triad);
-        console.log(chordNotesTriad);
+
         const chordNotesSeventh = createChordsForNoteInKeyNotes(note, notes, seventh);
 
         const chordType = getChordName(chordNotesTriad);
@@ -62,6 +51,8 @@ const generateChordsForKey = (key = "C") => {
     return keyChords;
 };
 
-console.log(generateChordsForKey("C"));
+// console.log(generateChordsForKey("C"));
 
-console.log(stepPatterns);
+// console.log(stepPatterns);
+
+export default generateChordsForKey;
