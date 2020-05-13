@@ -11,7 +11,7 @@ describe("Major whites notes", function () {
 });
 
 describe("Name that chord", function () {
-    test("C Minor", () => {
-        expect(getChordName(["C", "E", "G"])).toStrictEqual("Minor");
+    test("C Major", () => {
+        expect(getChordName(["C", "E", "G"])).toStrictEqual("Major");
     });
 });
