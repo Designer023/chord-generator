@@ -6,11 +6,11 @@
   "author": "Carl Topham",
   "license": "MIT",
   "type": "module",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
-  },
   "scripts": {
-    "start": "babel-node index.js"
+    "tidy": "prettier --write 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "prettier": "2.0.5"
   }
 }
