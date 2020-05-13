@@ -6,11 +6,19 @@
   "author": "Carl Topham",
   "license": "MIT",
   "type": "module",
+  "dependencies": {},
   "scripts": {
+    "start": "node --experimental-modules src/index.js",
+    "test": "jest",
     "tidy": "prettier --write 'src/**/*.js'"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "babel-cli": "^6.26.0",
+    "babel-jest": "^26.0.1",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^26.0.1",
     "prettier": "2.0.5"
   }
 }
