@@ -8,20 +8,7 @@ import {
 } from "./utils/constants/index.js";
 
 import { createNotesForKey } from "./utils/create-notes.js";
-
-const createChordsForNoteInKeyNotes = (rootNote, keyNotes, pattern) => {
-    const chordIndex = keyNotes.indexOf(rootNote);
-    let chordNotes = [rootNote];
-
-    pattern.forEach((step) => {
-        let idx = chordIndex + step - 1;
-        idx = idx % keyNotes.length;
-        const nextNote = keyNotes[idx];
-        chordNotes.push(nextNote);
-    });
-
-    return chordNotes;
-};
+import { createChordsForNoteInKeyNotes } from "./utils/chords.js";
 
 const getChordName = (chord, suffix = "") => {
     // If the gap between the 1st and 3rd notes is 5 steps then
