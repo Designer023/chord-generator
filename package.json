@@ -9,7 +9,7 @@
   "dependencies": {},
   "scripts": {
     "start": "node --experimental-modules src/index.js",
-    "test": "jest --colors ",
+    "test": "jest --colors",
     "tidy": "prettier --write '**/*.js'"
   },
   "devDependencies": {
@@ -39,6 +39,9 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!<rootDir>/node_modules/"
-    ]
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    }
   }
 }
