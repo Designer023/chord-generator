@@ -2,7 +2,10 @@
   "name": "chord-generator",
   "version": "0.0.1",
   "description": "Generates chords for a key",
-  "main": "index.js",
+  "main": "src/index.js",
+  "files": [ 
+      "src/**/*.js" 
+  ],
   "author": "Carl Topham",
   "license": "MIT",
   "type": "module",
@@ -10,12 +13,13 @@
   "scripts": {
     "start": "node --experimental-modules src/index.js",
     "test": "jest --colors",
-    "tidy": "prettier --write '**/*.js'"
+    "tidy": "prettier --write 'src/**/*.js'",
+    "build": "babel ./src --out-dir ./dist --source-maps --copy-files --ignore '**/*.test.js'"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "7.8.4",
     "babel-jest": "^26.0.1",
     "babel-preset-env": "^1.7.0",
     "jest": "^26.0.1",
