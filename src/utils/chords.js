@@ -14,6 +14,18 @@ export const createChordsForNoteInKeyNotes = (rootNote, keyNotes, pattern) => {
     return chordNotes;
 };
 
+export const isMajor = (notes) => {
+    const firstNote = allNotes.indexOf(notes[0]);
+    const thirdNote = allNotes.indexOf(notes[1]);
+
+    let diffInIndexes = thirdNote - firstNote + 1;
+    if (diffInIndexes < 0) {
+        diffInIndexes += 12;
+    }
+
+    return diffInIndexes === 5;
+};
+
 export const getChordName = (chord, suffix = "") => {
     // If the gap between the 1st and 3rd notes is 5 steps then
     const firstNote = allNotes.indexOf(chord[0]);

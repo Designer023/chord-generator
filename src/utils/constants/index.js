@@ -53,13 +53,24 @@ export const stepPatterns = {
     }
 };
 
-export const getNotesForSteps = (root, steps) => {
+export const getNotesForSteps = (root, key, steps) => {
     const offset = allNotes.indexOf(root);
+    const keyOffset = allNotes.indexOf(key);
+
+    let shift = keyOffset - offset;
+
+    while (shift >= 12) {
+        shift -= 12;
+    }
+
+    while (shift < 0) {
+        shift += 12;
+    }
 
     let notes = [];
 
     steps.map((step) => {
-        let cursor = offset + step.steps;
+        let cursor = shift + step.steps;
 
         while (cursor >= allNotes.length) {
             cursor -= allNotes.length;
@@ -71,6 +82,27 @@ export const getNotesForSteps = (root, steps) => {
 
         const retrivedNote = allNotes[cursor];
         notes.push(retrivedNote);
+    });
+
+    return notes;
+};
+
+export const getChordNotesForKeyAndChordSequence = (chordKeys, chordID, chordSequence) => {
+    const notes = [];
+
+    chordSequence.map((item) => {
+        let cursor = chordID - 1 + item - 1;
+
+        while (cursor >= 7) {
+            cursor -= 7;
+        }
+
+        while (cursor < 0) {
+            cursor += 7;
+        }
+        // let cursor = allNotes.indexOf(chordKey);
+        const selectedNote = chordKeys[cursor];
+        notes.push(selectedNote);
     });
 
     return notes;
