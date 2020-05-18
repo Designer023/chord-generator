@@ -25,14 +25,14 @@ export const exampleKeyC = {
         root: {
             notes: ["C", "E", "G", "B"],
             name: "C Major 7th",
-            inversions: 2,
+            inversions: 0,
             major: true,
             type: "triad"
         },
         firstInversion: {
             notes: ["E", "G", "B", "C"],
             name: "C Major first inversion 7th",
-            inversions: 2,
+            inversions: 1,
             major: true,
             type: "triad"
         },
@@ -46,7 +46,7 @@ export const exampleKeyC = {
         thirdInversion: {
             notes: ["B", "C", "E", "G"],
             name: "C Major third inversion 7th",
-            inversions: 2,
+            inversions: 3,
             major: true,
             type: "triad"
         }

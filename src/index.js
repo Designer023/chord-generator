@@ -1,8 +1,6 @@
-import { stepPatterns, getNotesForSteps } from "./utils/constants/index.js";
-
 import { createNotesForKey } from "./utils/create-notes.js";
 import { createChordsForNoteInKeyNotes, getChordName, isMajor } from "./utils/chords.js";
-import { getChordNotesForKeyAndChordSequence } from "./utils/constants";
+import { getChordNotesForKeyAndChordSequence } from "./utils/constants/index.js";
 
 import filterUnique from "./utils/filters/filter-unique.js";
 
@@ -30,13 +28,13 @@ const allChordsForKeyNotes = (keyNotes, keyRoot) => {
                     type: "triad"
                 },
                 firstInversion: {
-                    notes: getNotesForSteps(key, keyRoot, stepPatterns.triads.firstInversion),
+                    notes: getChordNotesForKeyAndChordSequence(uniqueNotes, 1 + index, [3, 5, 8]),
                     inversions: 1,
                     major: majorChord,
                     type: "triad"
                 },
                 secondInversion: {
-                    notes: getNotesForSteps(key, keyRoot, stepPatterns.triads.secondInversion),
+                    notes: getChordNotesForKeyAndChordSequence(uniqueNotes, 1 + index, [5, 8, 10]),
                     inversions: 2,
                     major: majorChord,
                     type: "triad"
@@ -44,30 +42,45 @@ const allChordsForKeyNotes = (keyNotes, keyRoot) => {
             },
             sevenths: {
                 root: {
-                    notes: getNotesForSteps(key, keyRoot, stepPatterns.sevenths.root),
+                    notes: rootChordSeventh,
                     name: `${key} ${getChordName(rootChordSeventh)} 7th`,
-                    inversions: 2,
+                    inversions: 0,
                     major: majorChord,
                     type: "triad"
                 },
                 firstInversion: {
-                    notes: getNotesForSteps(key, keyRoot, stepPatterns.sevenths.firstInversion),
+                    notes: getChordNotesForKeyAndChordSequence(uniqueNotes, 1 + index, [
+                        3,
+                        5,
+                        7,
+                        8
+                    ]),
                     name: `${key} ${getChordName(rootChord)} first inversion 7th`,
-                    inversions: 2,
+                    inversions: 1,
                     major: majorChord,
                     type: "triad"
                 },
                 secondInversion: {
-                    notes: getNotesForSteps(key, keyRoot, stepPatterns.sevenths.secondInversion),
+                    notes: getChordNotesForKeyAndChordSequence(uniqueNotes, 1 + index, [
+                        5,
+                        7,
+                        8,
+                        10
+                    ]),
                     name: `${key} ${getChordName(rootChord)} second inversion 7th`,
                     inversions: 2,
                     major: majorChord,
                     type: "triad"
                 },
                 thirdInversion: {
-                    notes: getNotesForSteps(key, keyRoot, stepPatterns.sevenths.thirdInversion),
+                    notes: getChordNotesForKeyAndChordSequence(uniqueNotes, 1 + index, [
+                        7,
+                        8,
+                        10,
+                        12
+                    ]),
                     name: `${key} ${getChordName(rootChord)} third inversion 7th`,
-                    inversions: 2,
+                    inversions: 3,
                     major: majorChord,
                     type: "triad"
                 }
