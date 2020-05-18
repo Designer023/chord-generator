@@ -1,5 +1,5 @@
 import { createNotesForKey } from "./utils/create-notes.js";
-import { createChordsForNoteInKeyNotes, getChordName, isMajor } from "./utils/chords.js";
+import { getChordName, isMajor } from "./utils/chords.js";
 import { getChordNotesForKeyAndChordSequence } from "./utils/constants/index.js";
 
 import filterUnique from "./utils/filters/filter-unique.js";
@@ -98,7 +98,5 @@ const generateChordsForKey = (key = "C") => {
 
     return generatedChords;
 };
-
-console.log(JSON.stringify(generateChordsForKey("C"), null, 4));
 
 export default generateChordsForKey;

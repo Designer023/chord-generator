@@ -1,10 +1,12 @@
 {
   "name": "chord-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generates chords for a key",
   "main": "src/index.js",
-  "files": [ 
-      "src/**/*.js" 
+  "files": [
+    "**/*.*",
+    "!**/*.stories.*",
+    "!**/*.test.*"
   ],
   "author": "Carl Topham",
   "license": "MIT",
@@ -17,15 +19,19 @@
     "build": "babel ./src --out-dir ./dist --source-maps --copy-files --ignore '**/*.test.js'"
   },
   "devDependencies": {
+    "@babel/cli": "7.8.4",
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "@babel/cli": "7.8.4",
     "babel-jest": "^26.0.1",
     "babel-preset-env": "^1.7.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-rename": "^2.0.0",
+    "husky": "^2.1.0",
     "jest": "^26.0.1",
-    "prettier": "2.0.5",
     "lint-staged": "^9.4.2",
-    "husky": "^2.1.0"
+    "prettier": "2.0.5"
   },
   "husky": {
     "hooks": {
@@ -38,11 +44,21 @@
       "git add"
     ]
   },
+  "publishConfig": {
+    "directory": "dist"
+  },
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!<rootDir>/node_modules/"
+      "!node_modules/",
+      "!vendor/",
+      "!dist/",
+      "!build/",
+      "!coverage/"
+    ],
+    "testPathIgnorePatterns": [
+      "dist"
     ],
     "transform": {
       "^.+\\.js?$": "babel-jest"
