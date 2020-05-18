@@ -12,13 +12,13 @@ const paths = {
     transpile: [path.join(root, "src/**/*.{js,jsx}")],
     copy: [
         path.join(root, "**/*.*"),
-        `!{node_modules,dist}/**`,
+        `!{node_modules,lib}/**`,
         `!gulpfile.js`,
         `!src/**/*.{js,jsx}`,
         `!coverage/**`,
         "!yarn.lock"
     ],
-    output: path.join(root, "dist")
+    output: path.join(root, "lib")
 };
 
 const clean = () => gulp.src(paths.output, { allowEmpty: true, read: false }).pipe(gulpClean());

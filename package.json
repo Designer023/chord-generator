@@ -1,27 +1,25 @@
 {
-  "name": "chord-generator",
-  "version": "0.2.0",
+  "name": "@designer023/chord-generator",
+  "version": "0.3.10",
   "description": "Generates chords for a key",
-  "main": "src/index.js",
-  "files": [
-    "**/*.*",
-    "!**/*.stories.*",
-    "!**/*.test.*"
-  ],
   "author": "Carl Topham",
   "license": "MIT",
   "dependencies": {},
+  "main": "index.js",
   "scripts": {
     "start": "node --experimental-modules src/index.js",
     "test": "jest --colors",
     "tidy": "prettier --write 'src/**/*.js'",
-    "build": "gulp build"
+    "build": "gulp build",
+    "prepare": "gulp build",
+    "publish": "npm publish lib --access=public"
   },
   "devDependencies": {
     "@babel/cli": "7.8.4",
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babel-jest": "^26.0.1",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "babel-preset-env": "^1.7.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
