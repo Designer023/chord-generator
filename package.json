@@ -25,7 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && jest"
     }
   },
   "lint-staged": {
@@ -42,6 +42,14 @@
     ],
     "transform": {
       "^.+\\.js?$": "babel-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
     }
   }
 }
