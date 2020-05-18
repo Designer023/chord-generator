@@ -1,6 +1,6 @@
 {
   "name": "chord-generator",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "Generates chords for a key",
   "main": "src/index.js",
   "files": [
