@@ -12,9 +12,11 @@ const paths = {
     transpile: [path.join(root, "src/**/*.{js,jsx}")],
     copy: [
         path.join(root, "**/*.*"),
-        `!${root}/{node_modules,dist}/**`,
-        `!${root}/gulpfile.js`,
-        `!${root}/src/**/*.{js,jsx}`
+        `!{node_modules,dist}/**`,
+        `!gulpfile.js`,
+        `!src/**/*.{js,jsx}`,
+        `!coverage/**`,
+        "!yarn.lock"
     ],
     output: path.join(root, "dist")
 };
