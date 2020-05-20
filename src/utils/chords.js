@@ -15,12 +15,16 @@ export const createChordsForNoteInKeyNotes = (rootNote, keyNotes, pattern) => {
 };
 
 export const isMajor = (notes) => {
-    const firstNote = allNotes.indexOf(notes[0]);
-    const thirdNote = allNotes.indexOf(notes[1]);
+    const firstNote = allNotes.indexOf(notes[0].notes);
+    const thirdNote = allNotes.indexOf(notes[1].notes);
 
     let diffInIndexes = thirdNote - firstNote + 1;
     if (diffInIndexes < 0) {
         diffInIndexes += 12;
+    }
+
+    if (diffInIndexes >= 12) {
+        diffInIndexes -= 12;
     }
 
     return diffInIndexes === 5;

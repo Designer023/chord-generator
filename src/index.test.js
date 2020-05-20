@@ -1,12 +1,16 @@
 import generateChordsForKey from "./index.js";
-import { exampleKeyC } from "./testData.js";
+import { exampleKeyC, exampleKeyD } from "./testData.js";
 
 describe("Test whole thing!", function () {
     test("Default Key of C", () => {
-        expect(generateChordsForKey()["C"]).toStrictEqual(exampleKeyC);
+        expect(generateChordsForKey()["1"]).toStrictEqual(exampleKeyC);
     });
 
     test("Key of C", () => {
-        expect(generateChordsForKey("C")["C"]).toStrictEqual(exampleKeyC);
+        expect(generateChordsForKey("C")["1"]).toStrictEqual(exampleKeyC);
+    });
+
+    test("Key of C ii", () => {
+        expect(generateChordsForKey("C")["2"]).toStrictEqual(exampleKeyD);
     });
 });

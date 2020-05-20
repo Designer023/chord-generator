@@ -16,9 +16,11 @@ const allChordsForKeyNotes = (keyNotes, keyRoot) => {
             7
         ]);
         const majorChord = isMajor(rootChord);
-
-        chords[key] = {
-            root: key,
+        const numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "I"];
+        const romanNumeral = numerals[index];
+        chords[index + 1] = {
+            root: keyRoot,
+            sequence: majorChord ? romanNumeral : romanNumeral.toLowerCase(),
             major: majorChord,
             triads: {
                 root: {

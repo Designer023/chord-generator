@@ -22,17 +22,23 @@ export const getChordNotesForKeyAndChordSequence = (chordKeys, chordID, chordSeq
 
     chordSequence.map((item) => {
         let cursor = chordID - 1 + item - 1;
+        let relativeOctave = 0;
 
         while (cursor >= 7) {
             cursor -= 7;
+            relativeOctave += 1;
         }
 
         while (cursor < 0) {
             cursor += 7;
+            relativeOctave -= 1;
         }
         // let cursor = allNotes.indexOf(chordKey);
         const selectedNote = chordKeys[cursor];
-        notes.push(selectedNote);
+        notes.push({
+            notes: selectedNote,
+            relativeOctave: relativeOctave
+        });
     });
 
     return notes;
