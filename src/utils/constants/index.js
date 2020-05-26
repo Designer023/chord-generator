@@ -45,72 +45,52 @@ export const getNotesOrderedForChord = (baseKeyNotes, chordID) => {
     return baseKeyNotes.slice(chordID - 1).concat(baseKeyNotes.slice(0, chordID - 1));
 };
 
-export const getNoteAndOctave = (originalNotes, pattern, startingIndex = 0) => {
+export const getNoteAndOctave = (originalNotes, pattern, startShift = 0) => {
+    // find out where A is in the list of notes provided for the chord ["C", "D", "E", "F", "G", "A", "B"]
     const indexOfA = findFirstIndexInOcatve(originalNotes);
-    const amtToShift = 7 - indexOfA;
-    const normalisedNotes = shiftToA(originalNotes);
 
+    // Loop through the patten provided [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     const notes = pattern.map((item) => {
+        // Zero the index for the cursor
         let cursor = item - 1;
 
+        // Set the octave to be 0
+        let currentOctave = startShift;
+
+        // Positive
+        if (item > 0) {
+            // While the cursor is out of bounds
+            // loop it back and
+            currentOctave += Math.floor(cursor / 7);
+            cursor = cursor % 7;
+
+            if (cursor >= indexOfA && indexOfA !== 0) {
+                currentOctave += 1;
+            }
+        }
+
+        // Negative
         if (item < 0) {
+            // Shift the index because -ve start on -1 just as +ve starts on +1. The 0th note on a series can never exist!
             cursor += 1;
+
+            while (cursor < 0) {
+                currentOctave -= 1;
+                cursor += 7;
+            }
+
+            if (cursor >= indexOfA && indexOfA !== 0) {
+                currentOctave += 1;
+            }
         }
 
-        let newIndex = item - 1 + amtToShift;
-        while (cursor >= 7) {
-            cursor -= 7;
-        }
-
-        while (cursor < 0) {
-            cursor += 7;
-        }
         const currentNote = originalNotes[cursor];
-
-        let octaveChanges = 0;
-
-        while (newIndex >= 7) {
-            newIndex -= 7;
-            octaveChanges += 1;
-        }
-
-        while (newIndex < 0) {
-            newIndex += 7;
-            octaveChanges -= 1;
-        }
-
-        const originalIndexInNewArray = normalisedNotes.indexOf(originalNotes[0]);
-
-        let octave = startingIndex;
-
-        if (newIndex <= originalIndexInNewArray) {
-            if (item > 1) {
-                octave += octaveChanges;
-            }
-        }
-        if (newIndex > originalIndexInNewArray) {
-            if (item > 1) {
-                octave += octaveChanges;
-            }
-        }
-
-        if (newIndex > originalIndexInNewArray) {
-            if (item < 1) {
-                octave += octaveChanges;
-            }
-        }
-
-        if (newIndex <= originalIndexInNewArray) {
-            if (item < 1) {
-                octave += octaveChanges;
-            }
-        }
 
         const note = currentNote;
 
         return {
             note,
-            relativeOctave: octave
+            relativeOctave: currentOctave
         };
     });
 
@@ -122,7 +102,8 @@ export const startingShifter = (chordKeys, chordID) => {
 
     const aIndex = findFirstIndexInOcatve(chordKeys);
 
-    return startingNoteIdx >= aIndex ? 1 : 0;
+    // Shift all sequences that the starting not is after the a index except where a is the first note
+    return startingNoteIdx >= aIndex && aIndex !== 0 ? 1 : 0;
 };
 
 export const getChordNotesForKeyAndChordSequence = (chordKeys, chordID, chordSequence) => {

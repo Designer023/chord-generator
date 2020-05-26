@@ -7,6 +7,210 @@ import {
     findFirstIndexInOcatve
 } from "./index";
 
+const notesOfC = ["C", "D", "E", "F", "G", "A", "B"];
+const notesOfCSharp = ["C♯", "D♯", "F", "F♯", "G♯", "A♯", "C"];
+const notesOfD = ["D", "E", "F♯", "G", "A", "B", "C♯"];
+const notesOfDSharp = ["D♯", "F", "G", "G♯", "A♯", "C", "D"];
+
+const notesOfA = ["A", "B", "C♯", "D", "E", "F♯", "G♯"];
+
+describe("Scales", function () {
+    test("C major", () => {
+        expect(
+            getChordNotesForKeyAndChordSequence(notesOfC, 1, [1, 2, 3, 4, 5, 6, 7, 8])
+        ).toStrictEqual([
+            {
+                note: "C",
+                relativeOctave: 0
+            },
+            {
+                note: "D",
+                relativeOctave: 0
+            },
+            {
+                note: "E",
+                relativeOctave: 0
+            },
+            {
+                note: "F",
+                relativeOctave: 0
+            },
+            {
+                note: "G",
+                relativeOctave: 0
+            },
+            {
+                note: "A",
+                relativeOctave: 1
+            },
+            {
+                note: "B",
+                relativeOctave: 1
+            },
+            {
+                note: "C",
+                relativeOctave: 1
+            }
+        ]);
+    });
+
+    test("C♯ major", () => {
+        expect(
+            getChordNotesForKeyAndChordSequence(notesOfCSharp, 1, [1, 2, 3, 4, 5, 6, 7, 8])
+        ).toStrictEqual([
+            {
+                note: "C♯",
+                relativeOctave: 0
+            },
+            {
+                note: "D♯",
+                relativeOctave: 0
+            },
+            {
+                note: "F",
+                relativeOctave: 0
+            },
+            {
+                note: "F♯",
+                relativeOctave: 0
+            },
+            {
+                note: "G♯",
+                relativeOctave: 0
+            },
+            {
+                note: "A♯",
+                relativeOctave: 1
+            },
+            {
+                note: "C",
+                relativeOctave: 1
+            },
+            {
+                note: "C♯",
+                relativeOctave: 1
+            }
+        ]);
+    });
+
+    test("D major", () => {
+        expect(
+            getChordNotesForKeyAndChordSequence(notesOfD, 1, [1, 2, 3, 4, 5, 6, 7, 8])
+        ).toStrictEqual([
+            {
+                note: "D",
+                relativeOctave: 0
+            },
+            {
+                note: "E",
+                relativeOctave: 0
+            },
+            {
+                note: "F♯",
+                relativeOctave: 0
+            },
+            {
+                note: "G",
+                relativeOctave: 0
+            },
+            {
+                note: "A",
+                relativeOctave: 1
+            },
+            {
+                note: "B",
+                relativeOctave: 1
+            },
+            {
+                note: "C♯",
+                relativeOctave: 1
+            },
+            {
+                note: "D",
+                relativeOctave: 1
+            }
+        ]);
+    });
+
+    test("D♯ major", () => {
+        expect(
+            getChordNotesForKeyAndChordSequence(notesOfDSharp, 1, [1, 2, 3, 4, 5, 6, 7, 8])
+        ).toStrictEqual([
+            {
+                note: "D♯",
+                relativeOctave: 0
+            },
+            {
+                note: "F",
+                relativeOctave: 0
+            },
+            {
+                note: "G",
+                relativeOctave: 0
+            },
+            {
+                note: "G♯",
+                relativeOctave: 0
+            },
+            {
+                note: "A♯",
+                relativeOctave: 1
+            },
+            {
+                note: "C",
+                relativeOctave: 1
+            },
+            {
+                note: "D",
+                relativeOctave: 1
+            },
+            {
+                note: "D♯",
+                relativeOctave: 1
+            }
+        ]);
+    });
+
+    test("A major", () => {
+        expect(
+            getChordNotesForKeyAndChordSequence(notesOfA, 1, [1, 2, 3, 4, 5, 6, 7, 8])
+        ).toStrictEqual([
+            {
+                note: "A",
+                relativeOctave: 0
+            },
+            {
+                note: "B",
+                relativeOctave: 0
+            },
+            {
+                note: "C♯",
+                relativeOctave: 0
+            },
+            {
+                note: "D",
+                relativeOctave: 0
+            },
+            {
+                note: "E",
+                relativeOctave: 0
+            },
+            {
+                note: "F♯",
+                relativeOctave: 0
+            },
+            {
+                note: "G♯",
+                relativeOctave: 0
+            },
+            {
+                note: "A",
+                relativeOctave: 1
+            }
+        ]);
+    });
+});
+
 test("C I Chord triad", () => {
     expect(
         getChordNotesForKeyAndChordSequence(["C", "D", "E", "F", "G", "A", "B"], 1, [1, 3, 5])
@@ -144,6 +348,25 @@ test("C# I Chord 7th ", () => {
         },
         {
             note: "C",
+            relativeOctave: 1
+        }
+    ]);
+});
+
+test("C VI Chord Triad ", () => {
+    expect(
+        getChordNotesForKeyAndChordSequence(["C", "D", "E", "F", "G", "A", "B"], 6, [1, 3, 5])
+    ).toStrictEqual([
+        {
+            note: "A",
+            relativeOctave: 1
+        },
+        {
+            note: "C",
+            relativeOctave: 1
+        },
+        {
+            note: "E",
             relativeOctave: 1
         }
     ]);
@@ -295,7 +518,7 @@ describe("Get Notes", function () {
         ]);
     });
 
-    test("E Notes 1-1", () => {
+    test("C Notes 1-1", () => {
         expect(
             getNoteAndOctave(["C", "D", "E", "F", "G", "A", "B"], [1, -1, -3, -5])
         ).toStrictEqual([
@@ -318,19 +541,19 @@ describe("Get Notes", function () {
         ]);
     });
 
-    test("C Notes 1357", () => {
-        expect(getNoteAndOctave(["B", "C", "D", "E", "F", "G", "A"], [1, 3, 5], 1)).toStrictEqual([
+    test("C Notes 135", () => {
+        expect(getNoteAndOctave(["B", "C", "D", "E", "F", "G", "A"], [1, 3, 5], 0)).toStrictEqual([
             {
                 note: "B",
-                relativeOctave: 1
+                relativeOctave: 0
             },
             {
                 note: "D",
-                relativeOctave: 1
+                relativeOctave: 0
             },
             {
                 note: "F",
-                relativeOctave: 1
+                relativeOctave: 0
             }
         ]);
     });
