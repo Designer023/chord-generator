@@ -6,15 +6,15 @@ export const exampleKeyC = {
         root: {
             notes: [
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 0
                 },
                 {
-                    notes: "E",
+                    note: "E",
                     relativeOctave: 0
                 },
                 {
-                    notes: "G",
+                    note: "G",
                     relativeOctave: 0
                 }
             ],
@@ -25,15 +25,15 @@ export const exampleKeyC = {
         firstInversion: {
             notes: [
                 {
-                    notes: "E",
+                    note: "E",
                     relativeOctave: 0
                 },
                 {
-                    notes: "G",
+                    note: "G",
                     relativeOctave: 0
                 },
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 1
                 }
             ],
@@ -44,15 +44,15 @@ export const exampleKeyC = {
         secondInversion: {
             notes: [
                 {
-                    notes: "G",
+                    note: "G",
                     relativeOctave: 0
                 },
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 1
                 },
                 {
-                    notes: "E",
+                    note: "E",
                     relativeOctave: 1
                 }
             ],
@@ -65,20 +65,20 @@ export const exampleKeyC = {
         root: {
             notes: [
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 0
                 },
                 {
-                    notes: "E",
+                    note: "E",
                     relativeOctave: 0
                 },
                 {
-                    notes: "G",
+                    note: "G",
                     relativeOctave: 0
                 },
                 {
-                    notes: "B",
-                    relativeOctave: 0
+                    note: "B",
+                    relativeOctave: 1
                 }
             ],
             name: "C minor 7th",
@@ -89,19 +89,19 @@ export const exampleKeyC = {
         firstInversion: {
             notes: [
                 {
-                    notes: "E",
+                    note: "E",
                     relativeOctave: 0
                 },
                 {
-                    notes: "G",
+                    note: "G",
                     relativeOctave: 0
                 },
                 {
-                    notes: "B",
-                    relativeOctave: 0
+                    note: "B",
+                    relativeOctave: 1
                 },
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 1
                 }
             ],
@@ -113,19 +113,19 @@ export const exampleKeyC = {
         secondInversion: {
             notes: [
                 {
-                    notes: "G",
+                    note: "G",
                     relativeOctave: 0
                 },
                 {
-                    notes: "B",
-                    relativeOctave: 0
-                },
-                {
-                    notes: "C",
+                    note: "B",
                     relativeOctave: 1
                 },
                 {
-                    notes: "E",
+                    note: "C",
+                    relativeOctave: 1
+                },
+                {
+                    note: "E",
                     relativeOctave: 1
                 }
             ],
@@ -137,19 +137,19 @@ export const exampleKeyC = {
         thirdInversion: {
             notes: [
                 {
-                    notes: "B",
-                    relativeOctave: 0
-                },
-                {
-                    notes: "C",
+                    note: "B",
                     relativeOctave: 1
                 },
                 {
-                    notes: "E",
+                    note: "C",
                     relativeOctave: 1
                 },
                 {
-                    notes: "G",
+                    note: "E",
+                    relativeOctave: 1
+                },
+                {
+                    note: "G",
                     relativeOctave: 1
                 }
             ],
@@ -169,16 +169,16 @@ export const exampleKeyD = {
         root: {
             notes: [
                 {
-                    notes: "D",
+                    note: "D",
                     relativeOctave: 0
                 },
                 {
-                    notes: "F",
+                    note: "F",
                     relativeOctave: 0
                 },
                 {
-                    notes: "A",
-                    relativeOctave: 0
+                    note: "A",
+                    relativeOctave: 1
                 }
             ],
             inversions: 0,
@@ -188,15 +188,15 @@ export const exampleKeyD = {
         firstInversion: {
             notes: [
                 {
-                    notes: "F",
+                    note: "F",
                     relativeOctave: 0
                 },
                 {
-                    notes: "A",
-                    relativeOctave: 0
+                    note: "A",
+                    relativeOctave: 1
                 },
                 {
-                    notes: "D",
+                    note: "D",
                     relativeOctave: 1
                 }
             ],
@@ -207,15 +207,15 @@ export const exampleKeyD = {
         secondInversion: {
             notes: [
                 {
-                    notes: "A",
-                    relativeOctave: 0
-                },
-                {
-                    notes: "D",
+                    note: "A",
                     relativeOctave: 1
                 },
                 {
-                    notes: "F",
+                    note: "D",
+                    relativeOctave: 1
+                },
+                {
+                    note: "F",
                     relativeOctave: 1
                 }
             ],
@@ -228,19 +228,19 @@ export const exampleKeyD = {
         root: {
             notes: [
                 {
-                    notes: "D",
+                    note: "D",
                     relativeOctave: 0
                 },
                 {
-                    notes: "F",
+                    note: "F",
                     relativeOctave: 0
                 },
                 {
-                    notes: "A",
-                    relativeOctave: 0
+                    note: "A",
+                    relativeOctave: 1
                 },
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 1
                 }
             ],
@@ -252,19 +252,19 @@ export const exampleKeyD = {
         firstInversion: {
             notes: [
                 {
-                    notes: "F",
+                    note: "F",
                     relativeOctave: 0
                 },
                 {
-                    notes: "A",
-                    relativeOctave: 0
-                },
-                {
-                    notes: "C",
+                    note: "A",
                     relativeOctave: 1
                 },
                 {
-                    notes: "D",
+                    note: "C",
+                    relativeOctave: 1
+                },
+                {
+                    note: "D",
                     relativeOctave: 1
                 }
             ],
@@ -276,19 +276,19 @@ export const exampleKeyD = {
         secondInversion: {
             notes: [
                 {
-                    notes: "A",
-                    relativeOctave: 0
-                },
-                {
-                    notes: "C",
+                    note: "A",
                     relativeOctave: 1
                 },
                 {
-                    notes: "D",
+                    note: "C",
                     relativeOctave: 1
                 },
                 {
-                    notes: "F",
+                    note: "D",
+                    relativeOctave: 1
+                },
+                {
+                    note: "F",
                     relativeOctave: 1
                 }
             ],
@@ -300,20 +300,20 @@ export const exampleKeyD = {
         thirdInversion: {
             notes: [
                 {
-                    notes: "C",
+                    note: "C",
                     relativeOctave: 1
                 },
                 {
-                    notes: "D",
+                    note: "D",
                     relativeOctave: 1
                 },
                 {
-                    notes: "F",
+                    note: "F",
                     relativeOctave: 1
                 },
                 {
-                    notes: "A",
-                    relativeOctave: 1
+                    note: "A",
+                    relativeOctave: 2
                 }
             ],
             name: "D minor third inversion 7th",

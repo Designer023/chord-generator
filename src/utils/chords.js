@@ -15,8 +15,8 @@ export const createChordsForNoteInKeyNotes = (rootNote, keyNotes, pattern) => {
 };
 
 export const isMajor = (notes) => {
-    const firstNote = allNotes.indexOf(notes[0].notes);
-    const thirdNote = allNotes.indexOf(notes[1].notes);
+    const firstNote = allNotes.indexOf(notes[0].note);
+    const thirdNote = allNotes.indexOf(notes[1].note);
 
     let diffInIndexes = thirdNote - firstNote + 1;
     if (diffInIndexes < 0) {
