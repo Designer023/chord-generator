@@ -1,6 +1,6 @@
 {
   "name": "@designer023/chord-generator",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Generates chords for a key",
   "author": "Carl Topham",
   "license": "MIT",
