@@ -1,5 +1,6 @@
 export const exampleKeyC = {
     root: "C",
+    notes: ["C", "D", "E", "F", "G", "A", "B"],
     sequence: "I",
     major: true,
     triads: {
@@ -163,6 +164,7 @@ export const exampleKeyC = {
 
 export const exampleKeyD = {
     root: "C",
+    notes: ["C", "D", "E", "F", "G", "A", "B"],
     sequence: "ii",
     major: false,
     triads: {

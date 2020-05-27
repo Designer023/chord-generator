@@ -20,6 +20,7 @@ const allChordsForKeyNotes = (keyNotes, keyRoot) => {
         const romanNumeral = numerals[index];
         chords[index + 1] = {
             root: keyRoot,
+            notes: uniqueNotes,
             sequence: majorChord ? romanNumeral : romanNumeral.toLowerCase(),
             major: majorChord,
             triads: {
