@@ -94,8 +94,8 @@ const allChordsForKeyNotes = (keyNotes, keyRoot) => {
     return chords;
 };
 
-const generateChordsForKey = (key = "C") => {
-    const notesForKey = createNotesForKey(key);
+const generateChordsForKey = (key = "C", pattern = "major") => {
+    const notesForKey = createNotesForKey(key, pattern);
 
     const generatedChords = allChordsForKeyNotes(notesForKey, "C");
 

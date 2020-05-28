@@ -20,6 +20,8 @@ export const technicalNames = [
 
 export const majorPattern = [0, 2, 2, 1, 2, 2, 2, 1];
 
+export const minorPattern = [0, 2, 1, 2, 2, 1, 2, 2];
+
 export const shiftToA = (original) => {
     const indexOfA = findFirstIndexInOcatve(original);
     return original.slice(indexOfA).concat(original.slice(0, indexOfA));
