@@ -11,6 +11,7 @@ export const makePattern = (pattern, chordIndex) => {
     });
     return notes;
 };
+
 export const createNotesForKey = (rootNote, pattern = "major") => {
     const chordIndex = allNotes.indexOf(rootNote);
     let notes;

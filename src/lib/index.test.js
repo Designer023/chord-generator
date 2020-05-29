@@ -1,11 +1,7 @@
-import {
-    getChordNotesForKeyAndChordSequence,
-    shiftToA,
-    getNotesOrderedForChord,
-    getNoteAndOctave,
-    startingShifter,
-    findFirstIndexInOcatve
-} from "./index";
+import { getChordNotesForKeyAndChordSequence } from "./get-chord-and-note-for-sequence.js";
+import { getNotesOrderedForChord } from "./get-notes-ordered-for-chord.js";
+import { getNoteAndOctave } from "./get-note-and-octave.js";
+import { startingShifter } from "./get-starting-shifter.js";
 
 const notesOfC = ["C", "D", "E", "F", "G", "A", "B"];
 const notesOfCSharp = ["C♯", "D♯", "F", "F♯", "G♯", "A♯", "C"];
@@ -372,46 +368,8 @@ test("C VI Chord Triad ", () => {
     ]);
 });
 
-describe("Shift", function () {
-    test("C Notes", () => {
-        expect(shiftToA(["C", "D", "E", "F", "G", "A", "B"])).toStrictEqual([
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G"
-        ]);
-    });
-
-    test("D Notes", () => {
-        expect(shiftToA(["D", "E", "F", "G", "A", "B", "C"])).toStrictEqual([
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G"
-        ]);
-    });
-
-    test("A Notes", () => {
-        expect(shiftToA(["A", "B", "C", "D", "E", "F", "G"])).toStrictEqual([
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F",
-            "G"
-        ]);
-    });
-});
-
-describe("Shift Notes", function () {
-    test("C Notes", () => {
+describe("Get notes for chord in order", function () {
+    test("C Notes I chord", () => {
         expect(getNotesOrderedForChord(["C", "D", "E", "F", "G", "A", "B"], 1)).toStrictEqual([
             "C",
             "D",
@@ -423,7 +381,7 @@ describe("Shift Notes", function () {
         ]);
     });
 
-    test("D Notes", () => {
+    test("C Notes II chord ", () => {
         expect(getNotesOrderedForChord(["C", "D", "E", "F", "G", "A", "B"], 2)).toStrictEqual([
             "D",
             "E",
@@ -435,7 +393,7 @@ describe("Shift Notes", function () {
         ]);
     });
 
-    test("E Notes", () => {
+    test("C Notes III chord", () => {
         expect(getNotesOrderedForChord(["C", "D", "E", "F", "G", "A", "B"], 3)).toStrictEqual([
             "E",
             "F",

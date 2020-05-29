@@ -1,6 +1,6 @@
 import { createChordsForNoteInKeyNotes, getChordName } from "./chords.js";
 
-import { triad } from "./constants/index.js";
+import { triad } from "../constants/index.js";
 
 describe("Major whites notes", function () {
     test("Scale of C", () => {

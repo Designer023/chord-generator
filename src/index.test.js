@@ -1,5 +1,5 @@
 import generateChordsForKey from "./index.js";
-import { exampleKeyC, exampleKeyD } from "./testData.js";
+import { exampleKeyC, exampleKeyD } from "./test/data/exampleKeys.js";
 
 describe("Test whole thing!", function () {
     test("Default Key of C", () => {

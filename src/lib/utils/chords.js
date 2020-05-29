@@ -1,4 +1,4 @@
-import { allNotes } from "./constants/index.js";
+import { allNotes } from "../constants/index.js";
 
 export const createChordsForNoteInKeyNotes = (rootNote, keyNotes, pattern) => {
     const chordIndex = keyNotes.indexOf(rootNote);

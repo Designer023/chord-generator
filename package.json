@@ -12,7 +12,7 @@
     "lib"
   ],
   "scripts": {
-    "start": "node --experimental-modules src/index.js",
+    "demo": "node --experimental-modules src/demo.js",
     "test": "jest --colors",
     "tidy": "prettier --write 'src/**/*.js'",
     "build": "rollup -c",
